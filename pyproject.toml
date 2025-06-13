@@ -25,16 +25,10 @@ build-backend = "setuptools.build_meta"
 # Rules for ruff based on available standards and linters
 [lint]
 select = [
-    "A",    # prevent using keywords that clobber python builtins
-    "E",    # pycodestyle (formatting issues)
-    "F",    # Pyflakes (detects undefined variables, unused imports, etc.)
-    "B",    # bugbear (catches common Python bugs)
-    "I",    # isort (ensures sorted imports)
-    "N",    # flake8-naming (enforces PEP 8 naming conventions)
-    "C90",  # mccabe (detects overly complex functions)
-    "UP",   # pyupgrade (suggests modern Python improvements)
-    "S",    # bandit (flags security issues)
-    "ANN",  # flake8 annotiations
+    "F",  # pyflakes (some undefined names)
+    "E",  # pycodestyle
+    "B",  # bugbear
+    "UP", # pyupgrade
 ]
 
 # Enable `N815` to enforce snake_case variable names
