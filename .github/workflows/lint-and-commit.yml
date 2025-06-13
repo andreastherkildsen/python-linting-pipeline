@@ -28,6 +28,9 @@ jobs:
         run: python --version
       - name: Installs Python Project
         run: python -m pip install . 
+      - name: Run MyPy Static Checker
+        run: python -m mypy .
+        continue-on-error: true
       - name: Run Ruff code analysis
         run: python -m ruff check --fix
         continue-on-error: true

@@ -3,7 +3,7 @@ name = "andthe-python-linting-pipeline"
 version = "1.0.0"
 description = "Demo project for a medium article"
 readme = "readme.md"
-requires-python = ">=3.7"
+requires-python = ">=3.11"
 authors = [
   {name = "Andreas Therkildsen"} # Optional
 ]
@@ -12,7 +12,8 @@ dependencies = [
     "pytest",
     "ruff",
     "python-dotenv",
-    "sqlfluff"
+    "sqlfluff", 
+    "mypy"
 ]
 
 [build-system]
@@ -20,8 +21,14 @@ requires = ["setuptools>=65.5.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 
-[tool.ruff]
+[tool.mypy]
+python_version = "3.11"
+strict = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
 
+
+[tool.ruff]
 # Rules for ruff based on available standards and linters
 [lint]
 select = [
